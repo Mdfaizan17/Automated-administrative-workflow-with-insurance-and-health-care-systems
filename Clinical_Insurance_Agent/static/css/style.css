@@ -1,0 +1,121 @@
+/* 🌿 Base Theme */
+body {
+    background: #F9FAFB;
+    font-family: 'Poppins', sans-serif;
+    color: #1f2937;
+}
+
+/* 🔵 Navbar */
+.navbar {
+    background: linear-gradient(90deg, #1E3A8A, #0D9488);
+    padding: 12px 20px;
+    border-radius: 0 0 15px 15px;
+}
+
+.navbar h3 {
+    color: #F9FAFB;
+}
+
+/* 🧊 Glass Card (Light Version) */
+.glass {
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.glass:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+/* 📝 Inputs */
+input, select {
+    background: #ffffff !important;
+    border: 1px solid #E5E7EB !important;
+    color: #111827 !important;
+    border-radius: 10px !important;
+    padding: 10px;
+}
+
+input:focus, select:focus {
+    border-color: #0D9488 !important;
+    box-shadow: 0 0 0 2px rgba(13,148,136,0.2);
+}
+
+/* 🔘 Button */
+button {
+    background: linear-gradient(90deg, #0D9488, #38BDF8);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: 500;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #1E3A8A, #0D9488);
+}
+
+/* 🎯 Agent Titles */
+h5 {
+    color: #1E3A8A;
+    font-weight: 600;
+}
+
+/* 🎨 Icons */
+i {
+    margin-right: 8px;
+    color: #0D9488;
+}
+
+/* 🏷️ Badges */
+.badge {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+    border-radius: 10px;
+}
+
+/* Severity Colors */
+.badge-low { background: #10B981; }
+.badge-medium { background: #F59E0B; }
+.badge-high { background: #DC2626; }
+
+/* 📊 Progress Bar */
+.progress {
+    height: 8px;
+    border-radius: 10px;
+    background: #E5E7EB;
+}
+
+.progress-bar {
+    transition: width 0.8s ease;
+}
+
+/* 🟢 Success */
+.bg-success { background-color: #10B981 !important; }
+
+/* 🟡 Warning */
+.bg-warning { background-color: #F59E0B !important; }
+
+/* 🔴 Danger */
+.bg-danger { background-color: #DC2626 !important; }
+
+/* ✨ Animation */
+.fade-in {
+    animation: fadeInUp 0.6s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

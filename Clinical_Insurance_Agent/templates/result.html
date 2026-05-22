@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="glass p-4">
+    <h3 class="text-center mb-4">
+        <i class="fa-solid fa-robot"></i> AI Agent Processing
+    </h3>
+
+    <div id="results"></div>
+
+    <div class="text-center mt-4">
+    <a href="/" class="btn btn-light">
+        <i class="fa-solid fa-arrow-left"></i> Back
+    </a>
+</div>
+</div>
+
+<script>
+    window.onload = function() {
+
+        let data = JSON.parse(localStorage.getItem("formData"));
+
+        fetch('/stream', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+        }).then(response => {
+
+            const reader = response.body.getReader();
+            const decoder = new TextDecoder();
+
+            function read() {
+                reader.read().then(({ done, value }) => {
+
+                    if (done) return;
+
+                    let chunk = decoder.decode(value);
+                    let lines = chunk.split("\n\n");
+
+                    lines.forEach(line => {
+                        if (line.startsWith("data: ")) {
+
+                            let jsonData = JSON.parse(line.replace("data: ", ""));
+                            updateUI(jsonData);
+                        }
+                    });
+
+                    read();
+                });
+            }
+
+            read();
+        });
+    };
+</script>
+
+{% endblock %}

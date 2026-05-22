@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="glass p-4">
+    <h4 class="mb-3 text-center" style="color:#1E3A8A;">
+        Patient Input
+    </h4>
+
+    <input id="symptoms" class="form-control mb-3" placeholder="Symptoms">
+
+    <select id="treatment" class="form-control mb-3">
+        <option>Consultation</option>
+        <option>Medication</option>
+        <option>Surgery</option>
+    </select>
+
+    <input id="cost" class="form-control mb-3" placeholder="Cost">
+
+    <select id="plan" class="form-control mb-3">
+        <option>Basic</option>
+        <option>Premium</option>
+    </select>
+
+    <button onclick="goToResult()" class="btn btn-primary w-100">
+    Run AI Agents
+</button>
+</div>
+
+
+
+{% endblock %}
